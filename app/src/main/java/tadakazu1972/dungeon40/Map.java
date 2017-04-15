@@ -85,7 +85,7 @@ public class Map {
             }
         }
         //マップチップ調整用
-        a = rand.nextInt(4)*3;
+        a = rand.nextInt(5)*3;
     }
 
     public void makeMap(){
@@ -159,6 +159,6 @@ public class Map {
             }
         }
         //マップチップ調整用
-        a = rand.nextInt(4)*3;
+        a = rand.nextInt(5)*3;
     }
 }

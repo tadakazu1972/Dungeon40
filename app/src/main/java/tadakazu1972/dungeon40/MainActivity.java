@@ -1,5 +1,6 @@
 package tadakazu1972.dungeon40;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,6 +17,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements Runnable, android
     protected int baseX; // for drawing Map Array's baseX
     protected int baseY; // for drawing Map Array's baseY
     protected Bitmap[] sBg = new Bitmap[4];
-    protected Bitmap[] sMap = new Bitmap[32];
+    protected Bitmap[] sMap = new Bitmap[15];
     protected Bitmap[] sArthur = new Bitmap[8];
     protected Bitmap[] sDamage = new Bitmap[7];
     protected MyChara myChara;
@@ -178,6 +180,13 @@ public class MainActivity extends AppCompatActivity implements Runnable, android
                         touchDirection = 4;
                         break;
                 }
+                //エンカウント
+                Random r = new Random();
+                if (r.nextInt(5)==0){
+                    Intent intent = new Intent(this, BattleActivity.class);
+                    startActivity(intent);
+                }
+                break;
         }
         return false;
     }
@@ -245,36 +254,19 @@ public class MainActivity extends AppCompatActivity implements Runnable, android
             // Map
             sMap[0] = BitmapFactory.decodeResource(res, R.drawable.back05);
             sMap[1] = BitmapFactory.decodeResource(res, R.drawable.brickl);
-            sMap[2] = BitmapFactory.decodeResource(res, R.drawable.descend);
-            sMap[3] = BitmapFactory.decodeResource(res, R.drawable.greenbrick03);
-            sMap[4] = BitmapFactory.decodeResource(res, R.drawable.rock);
-            sMap[5] = BitmapFactory.decodeResource(res, R.drawable.gate_open);
+            sMap[2] = BitmapFactory.decodeResource(res, R.drawable.exit);
+            sMap[3] = BitmapFactory.decodeResource(res, R.drawable.black);
+            sMap[4] = BitmapFactory.decodeResource(res, R.drawable.redrock);
+            sMap[5] = BitmapFactory.decodeResource(res, R.drawable.exit);
             sMap[6] = BitmapFactory.decodeResource(res, R.drawable.black);
             sMap[7] = BitmapFactory.decodeResource(res, R.drawable.bluerock);
-            sMap[8] = BitmapFactory.decodeResource(res, R.drawable.gate_open);
+            sMap[8] = BitmapFactory.decodeResource(res, R.drawable.exit);
             sMap[9] = BitmapFactory.decodeResource(res, R.drawable.black);
-            sMap[10] = BitmapFactory.decodeResource(res, R.drawable.wall0501);
-            sMap[11] = BitmapFactory.decodeResource(res, R.drawable.door_open);
+            sMap[10] = BitmapFactory.decodeResource(res, R.drawable.greenrock);
+            sMap[11] = BitmapFactory.decodeResource(res, R.drawable.exit);
             sMap[12] = BitmapFactory.decodeResource(res, R.drawable.black);
-            sMap[13] = BitmapFactory.decodeResource(res, R.drawable.wall0302);
-            sMap[14] = BitmapFactory.decodeResource(res, R.drawable.door_open);
-            sMap[15] = BitmapFactory.decodeResource(res, R.drawable.tree1_2);
-            sMap[16] = BitmapFactory.decodeResource(res, R.drawable.tree1_3);
-            sMap[17] = BitmapFactory.decodeResource(res, R.drawable.tree2_1);
-            sMap[18] = BitmapFactory.decodeResource(res, R.drawable.tree2_2);
-            sMap[19] = BitmapFactory.decodeResource(res, R.drawable.tree2_3);
-            sMap[20] = BitmapFactory.decodeResource(res, R.drawable.tree3_1);
-            sMap[21] = BitmapFactory.decodeResource(res, R.drawable.tree3_2);
-            sMap[22] = BitmapFactory.decodeResource(res, R.drawable.tree3_3);
-            sMap[23] = BitmapFactory.decodeResource(res, R.drawable.tree4_1);
-            sMap[24] = BitmapFactory.decodeResource(res, R.drawable.tree4_2);
-            sMap[25] = BitmapFactory.decodeResource(res, R.drawable.tree4_3);
-            sMap[26] = BitmapFactory.decodeResource(res, R.drawable.tree5_1);
-            sMap[27] = BitmapFactory.decodeResource(res, R.drawable.tree5_2);
-            sMap[28] = BitmapFactory.decodeResource(res, R.drawable.tree5_3);
-            sMap[29] = BitmapFactory.decodeResource(res, R.drawable.tree6_1);
-            sMap[30] = BitmapFactory.decodeResource(res, R.drawable.tree6_2);
-            sMap[31] = BitmapFactory.decodeResource(res, R.drawable.tree6_3);
+            sMap[13] = BitmapFactory.decodeResource(res, R.drawable.purplerock);
+            sMap[14] = BitmapFactory.decodeResource(res, R.drawable.exit);
             // Arthur
             sArthur[0] = BitmapFactory.decodeResource(res, R.drawable.arthur01);
             sArthur[1] = BitmapFactory.decodeResource(res, R.drawable.arthur02);

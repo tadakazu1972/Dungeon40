@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#000000"
+              android:padding="8dp">
+
+    <Button
+        android:id="@+id/monstername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="スケルトン・ウォリアー"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:background="@drawable/red_button"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/monsterdata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HP  250/450"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:background="@drawable/red_button"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+        <ImageView
+            android:id="@+id/monsterimage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:scaleType="centerInside"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnMagic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="アイテム"
+            android:textSize="24sp"
+            android:textColor="#111111"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnWeapon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="武器攻撃"
+            android:textSize="24sp"
+            android:textColor="#111111"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="データ"
+            android:textSize="24sp"
+            android:textColor="#111111"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="魔法"
+            android:textSize="24sp"
+            android:textColor="#111111"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/mydata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#eeeeee"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:background="@drawable/data_button"
+        android:text="HP  80/100"/>
+
+</LinearLayout>
